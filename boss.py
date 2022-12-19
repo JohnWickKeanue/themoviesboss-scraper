@@ -10,8 +10,6 @@ def flix(url):
     soup = BeautifulSoup (r, "html.parser")
     links = soup.select('a[href^="https://themoviesboss.mx/links/"]')
     gd_txt = f"Total Links Found : {len(links)}\n\n"
-    print(gd_txt)
-    print(links)
     for a in links:
        link = a["href"]
        r = client.get(link)
